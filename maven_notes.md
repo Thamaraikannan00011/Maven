@@ -14,6 +14,13 @@
 - Maven builds a project using its Project object model (POM) and a set of plugins.
 - Manages project dependencies automatically.
 
+### Features of Maven:
+* Free and Open source.
+* Project management.
+* Build Automation. (follows build life-cycle)
+* Automatic dependency mangement.
+* versioning the application.
+
 ### Advantages of Maven:
 
 1. easy project setup.
@@ -140,6 +147,7 @@
 6. Profile Section:
     - profile section in maven allows to define different configuration for various environment. (like Development, Testing or Production)
     - Each profile can have their own dependencies, properties for specific tassks.
+   
     ```
     <profiles>             <!-- Environment-specific configurations -->
         <profile>                 <!-- Development environment settings -->
@@ -163,8 +171,24 @@
 ## Workflow of maven pom.xml file:
 
 1. Initialization - mvn reads the pom.xml file and initialize the build process.
-2. Dependency resolution - download the dependencies mentioned in ppom.xml file.
+2. Dependency resolution - download the dependencies mentioned in pom.xml file.
 3. Build lifecycle - executes the build lifecycle phase like compile, test, pack, verify.
 4. plugin execution - run configured plugins for compiling and analyzing code.
 5. Package - pack the compiled code into specified format. (jar, war, etc,.)
 6. Deploy - deploy the packed code into remote repository or server.
+
+### Types of Maven POM:
+##### 1. Super POM:    
+- Super POM in maven ***default POM***.
+- All POM inherits from its parent or default. 
+##### 2. Simplest POM:
+- The simplest POM is ***one you define in your project***.
+- The simplest POM must defined with **Model Version, Artifact id, Group id, Version(Snapshot)**.
+- All other properties will inherited default configuration.
+##### 3. Effective POM:
+- Effective POM ***combines all the super POM and Simplest POM***.
+- Maven does not uses simplest POM to generate project it requires all the configuration.
+- Developers can overrite the default configuration.
+
+## Maven Repository:
+
