@@ -1,5 +1,8 @@
 ## Traditional approach without ***Maven***
 * Time-consuming setup.
+* Human error.
+* Lack of consistency.
+* Inefficent.
 * No standardized directory structure.
 * Manual dependency updates.
 * No built-in lifecycle management.
@@ -7,6 +10,7 @@
 * No central repository coordination.
 * Custom documentation processes.
 
+## write (.java) -> compile (.class) -> package -> build (.jar format)
 
 # MAVEN 
 
@@ -14,8 +18,23 @@
 - Maven builds a project using its Project object model (POM) and a set of plugins.
 - Manages project dependencies automatically.
 
+### History of Maven:
+* It was developed in the year 2002 by ***Jason van xyl***.
+* It was released in the year 2004.
+* It is owned by Apache software foundation.
+
 ### Features of Maven:
 * Free and Open source.
+* To automate build process.
+    - Dependency management.
+    - Plugins.
+    - Dependencies.
+    - Pom.xml
+* Maven repositories.
+    - Local repositories. 
+    - Central repositories.
+    - Remote repositories.
+* Easy to use.
 * Project management.
 * Build Automation. (follows build life-cycle)
 * Automatic dependency mangement.
@@ -29,6 +48,26 @@
 4. build lifecycle management.
 5. follows Repository system.
 6. manages documentation, reporting.
+
+### What is Build?
+
+- The process of converting source code into executable file.
+- The process include validate, compile, package.
+
+## Build tools:
+
+- It is a software or tool which is used to automate the build process.
+- Some of build tools are include 
+    1. Ant.
+    2. Gradle.
+    3. MS build.
+    4. Bazel.
+    5. PyBuilders.
+    6. Maven.
+    7. npm.
+    8. Yarn.
+    9. make.
+    10. ninja.
 
 ## Maven Installation & Setup:
 
@@ -58,9 +97,19 @@
 ## Maven POM:
 
 - POM stands for **Project Object Model**.
+- It contains information related to project and configuration details used by maven to build projects.
 - It is an configuration file which contains project structure, dependencies, build configurations, plugins and build profiles.
 - ***pom.xml*** helps the maven to build and manage the project.
 - It is written in the file called ***pom.xml*** (xml - Extensible Markup language)
+
+### Basic Terminologies:
+
+- **Dependencies:** are the external library/dependencies that are required for the project to function correctly.
+- **groupId:** Your organization's domain group that owns project, usually in reverse of domain name. (ex ***google.com*** given as ***com.google***)
+- **artifactId:** name of your project or library. (ex ***android***)
+- **version:** version of your project. (ex 1.0.0 [major, minor, patch])
+- **Plugins:** Tools that perform tasks like compiling code, running tests, generating reports, etc.
+- **Plugin Configuration:** Customizes how the plugin behaves, such as setting specific options.
 
 ### Components of ***pom.xml***:
 
@@ -89,9 +138,6 @@
         <artifactId>maven-pom-example</artifactId>
         <version>1.0-SNAPSHOT</version>
     ```
-    - groupId: Your organization's domain, usually in reverse. (ex ***google.com*** given as ***com.google***)
-    - artifactId: name of your project or library. (ex ***android***)
-    - version: version of your project. (ex 1.0.0 [major, minor, patch])
 
 3. Dependencies Section:
     - In this section we add the external libraries or dependecies which are required for the project.
@@ -125,8 +171,6 @@
             </plugins>
         </build>
     ```
-    - **Plugins:** Tools that perform tasks like compiling code, running tests, generating reports, etc.
-    - **Plugin Configuration:** Customizes how the plugin behaves, such as setting specific options.
 
 5. Repositories Section:
     - Repository section are used to define maven to fetch dependecies or libraries from specified repositories.
@@ -192,3 +236,26 @@
 
 ## Maven Repository:
 
+- It is the location where dependencies, plugins and other build artifacts are stored and retrived.
+- There are three types of maven repositories. they include
+    1. Local repository.
+    2. Central reository.
+    3. Remote repository.
+
+**1. Local Repository:**
+
+* It is an directory/folder on your local machine where maven tores all downloaded dependencies, plugins, project specific artifacts.
+* The directory local repository is ***.m2***
+
+**2. Central repository:**
+
+* It is the public repository provided by maven project.
+* It contains most open-source libraries and artifacts.
+* It is the default location where maven will search for dependency, if dependency is not found in local repository.
+* location of maven original repository is ***https://mvnrepository.com/***
+
+**3. Remote repository:**
+
+* It is any repository that is hosted on web-server or a private network and can be used to store or retrive artifacts.
+* It can be custom repositories provided by third party organization or private repositories setup by organization to host internal dependencies.
+* location - we can configure remote url in pom.xml.
