@@ -244,7 +244,7 @@
 
 **1. Local Repository:**
 
-* It is an directory/folder on your local machine where maven tores all downloaded dependencies, plugins, project specific artifacts.
+* It is an directory/folder on your local machine where maven stores all downloaded dependencies, plugins, project specific artifacts.
 * The directory local repository is ***.m2***
 
 **2. Central repository:**
