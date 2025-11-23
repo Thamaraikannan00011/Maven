@@ -310,8 +310,11 @@
     4. site-deploy
 
 ***pre-site*** - performs any pre site generation tasks.
+
 ***site*** - it generates the project site documentation.
+
 ***post-site*** - performs any post site generation task.
+
 ***site-deploy*** - it deploy the generated site into a web server or repository.
 
 ### Maven directory structure:
